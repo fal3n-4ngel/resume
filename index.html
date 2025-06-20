@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adithya Krishnan</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['IBM Plex Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     },
                 }
             }
@@ -22,313 +23,219 @@
     </script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'IBM Plex Sans', sans-serif;
         }
-        
-        /* Make sections visible by default */
-        .section {
-            opacity: 1;
-            transform: none;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        /* Only apply these styles when JS is loaded and working */
-        .js-loaded .section {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-        
+
         .hover-effect {
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
-        
+
         .hover-effect:hover {
-            transform: translateY(-2px);
+            color: #18181b;
+        }
+
+        .project-hover {
+            transition: all 0.2s ease;
+        }
+
+        .project-hover:hover {
+            background-color: #f4f4f5;
         }
 
         .project-card {
+            cursor: pointer;
             transition: all 0.2s ease;
         }
-        
+
         .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            background-color: #f4f4f5;
+            padding: 8px;
+            margin: -8px;
+            border-radius: 4px;
         }
     </style>
 </head>
 
-<body class="bg-white text-zinc-700">
-    <div class="max-w-4xl mx-auto px-6 py-16">
+<body class="bg-white text-neutral-600">
+    <div class="max-w-4xl mx-auto px-8 py-20">
         <!-- Header Section -->
-        <header class="mb-16 section">
-            <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
-                <!-- Profile image placeholder with fallback -->
-                <div class="w-24 h-24 rounded-full bg-zinc-100 overflow-hidden flex-shrink-0">
-                    <img src="dp.png" alt="Adithya Krishnan" class="w-full h-full object-cover" onerror="this.style.display='none'">
+        <header class="mb-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-26 h-26 rounded-full  flex items-center justify-center">
+                    <img src="dp.png" alt="Adithya Krishnan" class="w-24 h-24 rounded-full">
                 </div>
-                
-                <div>
-                    <h1 class="text-3xl font-semibold text-zinc-900 mb-3">Adithya Krishnan</h1>
-                    <p class="text-zinc-600 mb-6 max-w-2xl">
-                        a Software Engineer crafting
-                        Digital Experiences.
-                    </p>
-                    
-                    <div class="flex flex-wrap gap-5 text-sm">
-                        <a href="https://www.adithyakrishnan.com/Resume%20Adithya%20Krishnan.pdf" class="text-zinc-500 hover:text-zinc-900 hover-effect">Resume</a>
-                        <a href="https://github.com/fal3n-4ngel" class="text-zinc-500 hover:text-zinc-900 hover-effect">GitHub</a>
-                        <a href="https://www.linkedin.com/in/fal3n-4ngel" class="text-zinc-500 hover:text-zinc-900 hover-effect">LinkedIn</a>
-                        <a href="https://www.adithyakrishnan.com" class="text-zinc-500 hover:text-zinc-900 hover-effect">Portfolio</a>
-                    </div>
-                </div>
+
+            </div>
+
+            <h1 class="text-neutral-900 font-medium text-lg">Hello, I'm Adithya Krishnan</h1>
+
+
+            <p class="text-neutral-600 mb-4 leading-relaxed">
+                Software developer focused on building scalable web applications and distributed systems. I work with modern technologies to create efficient solutions for complex problems.
+            </p>
+
+            <p class="text-neutral-600 mb-4 leading-relaxed">
+                Currently exploring peer-to-peer architectures, blockchain applications, and AI-powered platforms while contributing to open-source projects.
+            </p>
+
+            <div class="flex flex-wrap gap-6 text-sm">
+                <a href="https://www.adithyakrishnan.com/Resume%20Adithya%20Krishnan.pdf"
+                    class="text-neutral-500 hover-effect">Resume</a>
+                <a href="https://github.com/fal3n-4ngel" class="text-neutral-500 hover-effect">GitHub</a>
+                <a href="https://www.linkedin.com/in/fal3n-4ngel" class="text-neutral-500 hover-effect">LinkedIn</a>
+                <a href="mailto:hello@adithyakrishnan.com" class="text-neutral-500 hover-effect">Email</a>
+                <a href="https://www.adithyakrishnan.com" class="text-neutral-500 hover-effect">View Portfolio</a>
             </div>
         </header>
 
-        <!-- Experience Section -->
-        <section class="mb-16 section">
-            <h2 class="text-zinc-500 uppercase text-xs font-medium tracking-wider mb-6">Experience</h2>
-            
-            <div class="space-y-8">
-                <div class="border-l-2 border-zinc-100 pl-6 py-1">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
-                        <h3 class="text-zinc-900 font-medium">Software Developer Intern — Nissan Digital</h3>
-                        <span class="text-zinc-500 text-sm">July 2024 - Dec 2024</span>
-                    </div>
-                    <p class="text-zinc-600 text-sm">
-                        Engineered RESTful APIs using .NET (C#) for migrating desktop applications to web-based solutions. Developed responsive Angular interfaces with seamless backend integration. Optimized ARAS PLM processes through JavaScript and C# enhancements, reducing workflow complexity.
-                    </p>
-                </div>
-                
-                <div class="border-l-2 border-zinc-100 pl-6 py-1">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
-                        <h3 class="text-zinc-900 font-medium">Developer Intern — Oronium</h3>
-                        <span class="text-zinc-500 text-sm">April 2024 - July 2024</span>
-                    </div>
-                    <p class="text-zinc-600 text-sm">
-                        Built and maintained a cloud management web application using Next.js and Tailwind CSS. Implemented responsive, intuitive user interfaces that enhanced overall user experience. Contributed to a full-stack e-commerce platform.
-                    </p>
-                </div>
-                
-                <div class="border-l-2 border-zinc-100 pl-6 py-1">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
-                        <h3 class="text-zinc-900 font-medium">Google Cloud Facilitator — GDSC MBCET</h3>
-                        <span class="text-zinc-500 text-sm">Nov 2022 - Dec 2023</span>
-                    </div>
-                    <p class="text-zinc-600 text-sm">
-                        Earned Google Cloud certification while organizing and leading cloud-focused events in collaboration with GDSC MBCET. Mentored participants to promote practical understanding of Google Cloud tools and solutions.
-                    </p>
-                </div>
-                
-                <div class="border-l-2 border-zinc-100 pl-6 py-1">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
-                        <h3 class="text-zinc-900 font-medium">Technical Co-Lead — IEEE MBCET Chapter</h3>
-                        <span class="text-zinc-500 text-sm">Jan 2023 - Feb 2024</span>
-                    </div>
-                    <p class="text-zinc-600 text-sm">
-                        Led development of the official chapter website, optimizing functionality and user experience. Organized technical workshops, seminars, and competitions to foster skill development.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section class="mb-16 section">
-            <h2 class="text-zinc-500 uppercase text-xs font-medium tracking-wider mb-6">Education</h2>
-            
-            <div class="border-l-2 border-zinc-100 pl-6 py-1">
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
-                    <h3 class="text-zinc-900 font-medium">Mar Baselios College of Engineering and Technology</h3>
-                    <span class="text-zinc-500 text-sm">June 2025</span>
-                </div>
-                <p class="text-zinc-600 text-sm">
-                    Bachelor of Technology in Computer Science, Honours in Machine Learning (CGPA: 8.33)
-                </p>
-            </div>
-        </section>
-
         <!-- Projects Section -->
-        <section class="mb-16 section">
-            <h2 class="text-zinc-500 uppercase text-xs font-medium tracking-wider mb-6">Featured Projects</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="p-6 bg-zinc-50 rounded-lg project-card">
-                    <h3 class="text-zinc-900 font-medium mb-2">DASH</h3>
-                    <p class="text-zinc-600 text-sm mb-3">
-                        A peer-to-peer distributed system for executing serverless functions with AI-powered task scheduling.
-                    </p>
-                    <div class="flex gap-2 flex-wrap mb-3">
-                        <span class="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs rounded">Tauri</span>
-                        <span class="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs rounded">Next.js</span>
-                        <span class="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs rounded">Firebase</span>
+        <section class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <!-- Personal Projects -->
+                <div>
+                    <h2 class="text-neutral-400 mb-4 font-mono text-sm">Personal.</h2>
+
+                    <div class="space-y-4">
+                       <div class="project-card" onclick="window.open('https://dash-webpage.vercel.app/', '_blank')">
+                            <h3 class="text-neutral-900 font-medium text-sm mb-2">Dash-Desktop</h3>
+                            <p class="text-neutral-600 text-sm leading-relaxed">
+                                Peer-to-peer serverless hosting with AI task scheduling.
+                            </p>
+                        </div>
+
+                        <div class="project-card" onclick="window.open('https://flashdrive-f2an.vercel.app/', '_blank')">
+                            <h3 class="text-neutral-900 font-medium text-sm mb-2">Flash Drive</h3>
+                            <p class="text-neutral-600 text-sm leading-relaxed">
+                                AI image generator with custom Stable Diffusion model.
+                            </p>
+                        </div>
+
+                        <div class="project-card" onclick="window.open('https://github.com/Chackoz/Tuples', '_blank')">
+                            <h3 class="text-neutral-900 font-medium text-sm mb-2">Tuples</h3>
+                            <p class="text-neutral-600 text-sm leading-relaxed">
+                                Social platform with AI-powered recommendations.
+                            </p>
+                        </div>
+
+                        <div class="project-card" onclick="window.open('https://github.com/Deflated-Pappadam/Smart-Certify', '_blank')">
+                            <h3 class="text-neutral-900 font-medium text-sm mb-2">Smart-Certify</h3>
+                            <p class="text-neutral-600 text-sm leading-relaxed">
+                                Blockchain certificate verification system.
+                            </p>
+                        </div>
                     </div>
-                    <a href="https://github.com/fal3n-4ngel/Dash-Desktop" class="text-zinc-500 hover:text-zinc-900 text-sm hover-effect">View Project →</a>
                 </div>
-                
-                <div class="p-6 bg-zinc-50 rounded-lg project-card">
-                    <h3 class="text-zinc-900 font-medium mb-2">Tuples MBCET</h3>
-                    <p class="text-zinc-600 text-sm mb-3">
-                        An exclusive engagement platform for B.Tech students with AI-powered friend recommendations.
-                    </p>
-                    <div class="flex gap-2 flex-wrap mb-3">
-                        <span class="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs rounded">Next.js</span>
-                        <span class="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs rounded">Tailwind CSS</span>
-                        <span class="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs rounded">Firebase</span>
+
+                <!-- Client Projects -->
+                <div>
+                    <h2 class="text-neutral-400 mb-4 font-mono text-sm">Client.</h2>
+
+                    <div class="space-y-4">
+                        <div class="project-card" onclick="window.open('https://www.define3.xyz/', '_blank')">
+                            <h3 class="text-neutral-900 font-medium text-sm mb-2">Define3</h3>
+                            <p class="text-neutral-600 text-sm leading-relaxed">
+                                A 24hr Hackathon by CS department of MBCET.
+                            </p>
+                        </div>
+
+                        <div class="project-card" onclick="window.open('https://www.ayadacliff.com/', '_blank')">
+                            <h3 class="text-neutral-900 font-medium text-sm mb-2">Ayada Cliffs</h3>
+                            <p class="text-neutral-600 text-sm leading-relaxed">
+                                Luxury resort website with immersive design.
+                            </p>
+                        </div>
+
+                        <div class="project-card" onclick="window.open('https://www.blossomflora.in/', '_blank')">
+                            <h3 class="text-neutral-900 font-medium text-sm mb-2">Blossom Flora</h3>
+                            <p class="text-neutral-600 text-sm leading-relaxed">
+                                Elegant floral business with responsive interface.
+                            </p>
+                        </div>
+
+                        <div class="project-card" onclick="window.open('https://gamior.vercel.app/', '_blank')">
+                            <h3 class="text-neutral-900 font-medium text-sm mb-2">Gamior Interiors</h3>
+                            <p class="text-neutral-600 text-sm leading-relaxed">
+                                Interior design portfolio showcasing premium work.
+                            </p>
+                        </div>
                     </div>
-                    <a href="https://github.com/fal3n-4ngel/Tuples" class="text-zinc-500 hover:text-zinc-900 text-sm hover-effect">View Project →</a>
                 </div>
-                
-                <div class="p-6 bg-zinc-50 rounded-lg project-card">
-                    <h3 class="text-zinc-900 font-medium mb-2">SOYO - Stream Own Your Own</h3>
-                    <p class="text-zinc-600 text-sm mb-3">
-                        A Next.js application that allows users to stream personal media collections over Wi-Fi from a local drive.
-                    </p>
-                    <div class="flex gap-2 flex-wrap mb-3">
-                        <span class="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs rounded">Next.js</span>
-                        <span class="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs rounded">Tailwind CSS</span>
-                    </div>
-                    <a href="https://github.com/fal3n-4ngel/SOYO" class="text-zinc-500 hover:text-zinc-900 text-sm hover-effect">View Project →</a>
-                </div>
-                
-                <div class="p-6 bg-zinc-50 rounded-lg project-card">
-                    <h3 class="text-zinc-900 font-medium mb-2">Smart Certify</h3>
-                    <p class="text-zinc-600 text-sm mb-3">
-                        A blockchain solution for government entities to optimize the issuance and verification of certificates.
-                    </p>
-                    <div class="flex gap-2 flex-wrap mb-3">
-                        <span class="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs rounded">Next.js</span>
-                        <span class="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs rounded">Solidity</span>
-                        <span class="px-2 py-1 bg-zinc-100 text-zinc-600 text-xs rounded">Ethereum</span>
-                    </div>
-                    <a href="https://github.com/Deflated-Pappadam/Smart-Certify" class="text-zinc-500 hover:text-zinc-900 text-sm hover-effect">View Project →</a>
-                </div>
-            </div>
-            
-            <div class="mt-6">
-                <a href="#" class="text-zinc-500 hover:text-zinc-900 text-sm hover-effect">View All Projects →</a>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="mb-16 section">
-            <h2 class="text-zinc-500 uppercase text-xs font-medium tracking-wider mb-6">Technical Skills</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Experience Section -->
+        <section class="mb-16">
+            <h2 class="text-neutral-400 mb-4 font-mono text-sm">Experience.</h2>
+
+            <div class="space-y-4">
                 <div>
-                    <h3 class="text-zinc-900 font-medium mb-2">Languages</h3>
-                    <p class="text-zinc-600 text-sm">
-                        C, Java, Python, C#, JavaScript, TypeScript, HTML/CSS, SQL, Solidity
+                    <h3 class="text-neutral-900 font-medium mb-1">Software Developer Intern — Nissan Digital</h3>
+                    <p class="text-neutral-500 text-sm mb-2">July 2024 - Dec 2024</p>
+                    <p class="text-neutral-600 text-sm leading-relaxed">
+                        Engineered RESTful APIs using .NET (C#) for migrating desktop applications to web-based
+                        solutions. Developed responsive Angular interfaces with seamless backend integration.
                     </p>
                 </div>
-                
+
                 <div>
-                    <h3 class="text-zinc-900 font-medium mb-2">Frameworks</h3>
-                    <p class="text-zinc-600 text-sm">
-                        Angular.js, Next.js, React.js, .NET, Flutter, Tailwind CSS
+                    <h3 class="text-neutral-900 font-medium mb-1">Full Stack Developer Intern — Oronium</h3>
+                    <p class="text-neutral-500 text-sm mb-2">April 2024 - July 2024</p>
+                    <p class="text-neutral-600 text-sm leading-relaxed">
+                        Built and maintained a cloud management web application using Next.js and Tailwind CSS.
+                        Implemented responsive, intuitive user interfaces.
                     </p>
                 </div>
-                
+
                 <div>
-                    <h3 class="text-zinc-900 font-medium mb-2">Developer Tools</h3>
-                    <p class="text-zinc-600 text-sm">
-                        Git, Docker, Google Cloud Platform, AWS, Firebase, Figma
+                    <h3 class="text-neutral-900 font-medium mb-1">Google Cloud Facilitator — GDSC MBCET</h3>
+                    <p class="text-neutral-500 text-sm mb-2">Nov 2022 - Dec 2023</p>
+                    <p class="text-neutral-600 text-sm leading-relaxed">
+                        Earned Google Cloud certification while organizing cloud-focused events. Mentored participants
+                        in Google Cloud tools and solutions.
                     </p>
                 </div>
             </div>
         </section>
+
+
 
         <!-- Awards Section -->
-        <section class="mb-16 section">
-            <h2 class="text-zinc-500 uppercase text-xs font-medium tracking-wider mb-6">Awards & Certifications</h2>
-            
-            <div class="space-y-6">
-                <div class="border-l-2 border-zinc-100 pl-6 py-1">
-                    <h3 class="text-zinc-900 font-medium mb-1">Cloud Digital Leader</h3>
-                    <p class="text-zinc-600 text-sm">Google Cloud Certified, Nov 2022 - Nov 2025</p>
+        <section class="mb-16">
+            <h2 class="text-neutral-400 mb-4 font-mono text-sm">Awards.</h2>
+
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-neutral-900 font-medium text-sm mb-1">Web3 for India 2023 Winner</h3>
+                    <p class="text-neutral-500 text-sm">BlockHash - Kerala Blockchain Academy</p>
                 </div>
-                
-                <div class="border-l-2 border-zinc-100 pl-6 py-1">
-                    <h3 class="text-zinc-900 font-medium mb-1">Web3 for India 2023 Winner</h3>
-                    <p class="text-zinc-600 text-sm">BlockHash - Kerala Blockchain Academy (Team Deflated Pappadam)</p>
+
+                <div>
+                    <h3 class="text-neutral-900 font-medium text-sm mb-1">Best Frontend Design & First Runner Up</h3>
+                    <p class="text-neutral-500 text-sm">CodeCrypt Hackathon — CUSAT, 2023</p>
                 </div>
-                
-                <div class="border-l-2 border-zinc-100 pl-6 py-1">
-                    <h3 class="text-zinc-900 font-medium mb-1">Best Frontend Design & First Runner Up</h3>
-                    <p class="text-zinc-600 text-sm">CodeCrypt Hackathon — CUSAT, 2023 (Team Deflated Pappadam)</p>
+
+                <div>
+                    <h3 class="text-neutral-900 font-medium text-sm mb-1">Cloud Digital Leader</h3>
+                    <p class="text-neutral-500 text-sm">Google Cloud Certified, Nov 2022 - Nov 2025</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="section">
-            <h2 class="text-zinc-500 uppercase text-xs font-medium tracking-wider mb-6">Get in Touch</h2>
-            
-            <div class="flex flex-col md:flex-row gap-6">
-                <a href="mailto:hello@adithyakrishnan.com" class="text-zinc-900 hover:text-zinc-600 hover-effect">hello@adithyakrishnan.com</a>
+        <!-- Footer Section -->
+        <footer class="border-t border-neutral-200 pt-8">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="text-neutral-500 text-sm">
+                    <p>Simple resume format for recruiters/clients and quick reference.</p>
+                    <p class="mt-1">For a complete portfolio experience, visit <a href="https://www.adithyakrishnan.com" class="text-neutral-700 hover-effect">adithyakrishnan.com</a></p>
+                </div>
+                <div class="text-neutral-400 text-sm">
+                    © 2025 Adithya Krishnan. All rights reserved.
+                </div>
             </div>
-        </section>
+        </footer>
     </div>
 
-    <footer class="py-8 border-t border-zinc-100">
-        <div class="max-w-4xl mx-auto px-6 text-center text-zinc-500 text-sm">
-            © 2025 Adithya Krishnan. All rights reserved.
-        </div>
-    </footer>
 
-    <script>
-        // First make sure content is visible even if script fails
-        document.addEventListener('DOMContentLoaded', function() {
-            try {
-                // Check if GSAP loaded
-                if (typeof gsap === 'undefined') {
-                    console.error('GSAP not loaded! Animations disabled.');
-                    document.querySelectorAll('.section').forEach(section => {
-                        section.style.opacity = 1;
-                        section.style.transform = 'none';
-                    });
-                    return;
-                }
-                
-                // Mark document as JS-loaded to enable animations
-                document.documentElement.classList.add('js-loaded');
-                
-                // Register ScrollTrigger plugin
-                gsap.registerPlugin(ScrollTrigger);
-                
-                // Animate header elements immediately
-                gsap.to("header", {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    ease: "power3.out"
-                });
-                
-                // Animate sections with scroll trigger
-                const sections = document.querySelectorAll('.section');
-                
-                sections.forEach((section, index) => {
-                    gsap.to(section, {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.8,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: section,
-                            start: "top bottom-=100",
-                            toggleActions: "play none none none"
-                        },
-                        delay: index * 0.1
-                    });
-                });
-            } catch (error) {
-                console.error('Animation error:', error);
-                // Make sure content is visible if there's an error
-                document.querySelectorAll('.section').forEach(section => {
-                    section.style.opacity = 1;
-                    section.style.transform = 'none';
-                });
-            }
-        });
-    </script>
 </body>
 
 </html>
